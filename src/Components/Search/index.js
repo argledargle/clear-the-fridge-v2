@@ -72,7 +72,6 @@ const Search = ({ callback }) => {
   }
 
   function getResults (url) {
-    callback('loading')
     fetch(url)
       .then(response => response.json())
       .then(data => callback(data))
