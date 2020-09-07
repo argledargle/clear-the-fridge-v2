@@ -81,7 +81,6 @@ const Search = ({ callback }) => {
     const healthQuery = checkedDietArray.map(item => {
       return `health=${item}&`
     }).toString()
-
     const queryStringComponents = {
       app_key: appKey,
       app_id: appId
@@ -91,7 +90,7 @@ const Search = ({ callback }) => {
       queryStringComponents.q = params.textInput
     }
 
-    if (params.dietInput !== '' || params.dietInput !== undefined) {
+    if (params.dietInput !== '' && params.dietInput !== undefined) {
       queryStringComponents.diet = params.dietInput
     }
 
