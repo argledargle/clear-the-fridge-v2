@@ -9,7 +9,6 @@ class Main extends React.Component {
   }
 
   searchResults = value => {
-    console.log('Parent received vlaue from child: ', value)
     this.setState({ searchResults: value })
   }
 
@@ -18,7 +17,7 @@ class Main extends React.Component {
     return (
       <div>
         <div className='max-w-lg mx-auto flex p-6 bg-gray-100 mt-10 rounded-lg shadow-md'>
-          <div className='ml-6 pt-1'>
+          <div className='pt-1'>
             <h1 className='text-2xl text-blue-700 leading-tight'>
               Clear the Fridge
             </h1>
@@ -30,7 +29,6 @@ class Main extends React.Component {
         </div>
         <Search callback={this.searchResults} />
         {this.state.searchResults !== null ? (
-          // console.log('hits: ', this.state.searchResults.hits)
           <Cards recipes={this.state.searchResults.hits} />
         ) : null}
       </div>

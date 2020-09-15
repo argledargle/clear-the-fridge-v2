@@ -1,6 +1,8 @@
 import React from 'react'
 import Card from '../Card'
 
+//TODO: uninstall styled-components
+
 class Main extends React.Component {
   constructor (props) {
     super(props)
@@ -8,7 +10,7 @@ class Main extends React.Component {
   }
   render () {
     const recipeArray = this.state.recipes
-    console.log(recipeArray)
+
     if (this.props.length === 0) {
       return (
         <div className='max-w-lg mx-auto flex p-6 bg-gray-100 mt-10 rounded-lg shadow-md'>
@@ -23,15 +25,10 @@ class Main extends React.Component {
     }
     return (
       <div>
-        {recipeArray.map(item => {
-            const recipe = item.recipe
-            console.log('recipe: ', recipe)
-          return(
-            <React.Fragment>
-              <h1>{recipe.label}</h1>
-              <h1>{recipe.image}</h1>
-            </React.Fragment>
-          )
+        {recipeArray.map((item, i) => {
+          const recipe = item.recipe
+          console.log('recipe: ', recipe)
+          return <Card key={i} {...recipe} />
         })}
       </div>
     )
