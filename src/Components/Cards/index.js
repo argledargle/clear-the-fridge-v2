@@ -1,8 +1,6 @@
 import React from 'react'
 import Card from '../Card'
 
-//TODO: uninstall styled-components
-
 class Main extends React.Component {
   constructor (props) {
     super(props)
@@ -24,10 +22,9 @@ class Main extends React.Component {
       )
     }
     return (
-      <div>
+      <div className='max-w-lg mx-auto flex flex-col mt-10'>
         {recipeArray.map((item, i) => {
           const recipe = item.recipe
-          console.log('recipe: ', recipe)
           return <Card key={i} {...recipe} />
         })}
       </div>
