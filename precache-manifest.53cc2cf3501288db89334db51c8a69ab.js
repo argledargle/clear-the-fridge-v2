@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e75d13b32355d2401e2e699bcbc4fc8b",
+    "revision": "4d5083e16d75316c0ee0a6af397d2028",
     "url": "/clear-the-fridge-v2/index.html"
   },
   {
-    "revision": "df624df8d0e73a649700",
+    "revision": "76d97cdf60ab3086983e",
     "url": "/clear-the-fridge-v2/static/css/main.232c872a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/clear-the-fridge-v2/static/js/2.7193d26d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "df624df8d0e73a649700",
-    "url": "/clear-the-fridge-v2/static/js/main.d700fb27.chunk.js"
+    "revision": "76d97cdf60ab3086983e",
+    "url": "/clear-the-fridge-v2/static/js/main.367330ef.chunk.js"
   },
   {
     "revision": "123b77b34387503ba7f6",
