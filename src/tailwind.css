@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .flip {
+    perspective: 1000px;
+  }
+  .flip-content {
+    position: relative;
+    text-align: center;
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+  }
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+}
+
+@variants group-hover {
+  .transformation {
+    transform: rotateY(180deg);
+    transition: transform 0.3s;
+  }
+}

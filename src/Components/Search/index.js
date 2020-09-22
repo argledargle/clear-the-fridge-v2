@@ -78,10 +78,11 @@ const Search = ({ callback }) => {
   }
 
   function formatQueryParams (params) {
-    const healthQuery = checkedDietArray.map(item => {
-      return `health=${item}&`
-    }).toString()
-
+    const healthQuery = checkedDietArray
+      .map(item => {
+        return `health=${item}&`
+      })
+      .toString()
     const queryStringComponents = {
       app_key: appKey,
       app_id: appId
@@ -91,20 +92,20 @@ const Search = ({ callback }) => {
       queryStringComponents.q = params.textInput
     }
 
-    if (params.dietInput !== '' || params.dietInput !== undefined) {
+    if (params.dietInput !== '' && params.dietInput !== undefined) {
       queryStringComponents.diet = params.dietInput
     }
 
     const queryString = Object.keys(queryStringComponents)
       .map(key => `${key}=${queryStringComponents[key]}`)
       .join('&')
-    const newUrl = url + healthQuery  + queryString
+    const newUrl = url + healthQuery + queryString
     return newUrl
   }
 
   return (
     <div className='max-w-lg flex p-6 bg-gray-100 mt-10 rounded-lg shadow-md mx-auto'>
-      <div className='ml-6 pt-1'>
+      <div className='pt-1'>
         <h1 className='text-xl text-blue-700 leading-tight'>
           What do you want to use up?
         </h1>
@@ -112,58 +113,63 @@ const Search = ({ callback }) => {
           Type in the ingredients you're looking to clear out from your kitchen,
           select a diet and click search.
         </p>
-        <form className='mx-auto flex flex-row justify-between flex-wrap'>
-          <input
-            className='rounded-sm border border-gray-600'
-            name='textInput'
-            type='text'
-            placeholder='Chicken, rice'
-            id='search-term'
-            required
-            onChange={handleInputChange}
-          />
-          <select
-            className='rounded-sm border-gray-600 border'
-            name='dietInput'
-            onChange={handleInputChange}
-          >
-            <option value='' defaultValue>
-              Select
-            </option>
-            <option value='balanced'>Balanced</option>
-            <option value='high-protein'>High-Protein</option>
-            <option value='low-carb'>Low-Carb</option>
-            <option value='low-fat'>Low-Fat</option>
-          </select>
-          <input
-            type='submit'
-            value='Search'
-            className='rounded-sm border-gray-600 border'
-            onClick={buildSearchQuery}
-          />
+        <form className='mx-auto'>
+          <div className='flex flex-row justify-between'>
+            <input
+              className='rounded-sm border border-gray-600'
+              name='textInput'
+              type='text'
+              placeholder='Chicken, rice'
+              id='search-term'
+              required
+              onChange={handleInputChange}
+            />
+            <select
+              className='rounded-sm border-gray-600 border'
+              name='dietInput'
+              onChange={handleInputChange}
+            >
+              <option value='' defaultValue>
+                Diet
+              </option>
+              <option value='balanced'>Balanced</option>
+              <option value='high-protein'>High-Protein</option>
+              <option value='low-carb'>Low-Carb</option>
+              <option value='low-fat'>Low-Fat</option>
+            </select>
+            <input
+              type='submit'
+              value='Search'
+              className='rounded-sm border-gray-600 border'
+              onClick={buildSearchQuery}
+            />
+          </div>
           <fieldset>
-            <legend>Optional health choices:</legend>
-            {dietArray.map(item => {
-              return (
-                <React.Fragment key={item.value}>
-                  <input
-                    type='checkbox'
-                    name={item.value}
-                    value={item.value}
-                    id={item.value}
-                    onChange={() =>
-                      dispatch({
-                        type: checkedDietArray.includes(item.value)
-                          ? 'remove'
-                          : 'add',
-                        value: item.value
-                      })
-                    }
-                  />
-                  <label htmlFor={item.value}>{item.name}</label>
-                </React.Fragment>
-              )
-            })}
+            <legend className='text-lg'>Optional health choices:</legend>
+            <div className='grid grid-flow-col grid-cols-2 grid-rows-3'>
+              {dietArray.map(item => {
+                return (
+                  <div className='inline' key={item.value}>
+                    <input
+                      className='mx-1'
+                      type='checkbox'
+                      name={item.value}
+                      value={item.value}
+                      id={item.value}
+                      onChange={() =>
+                        dispatch({
+                          type: checkedDietArray.includes(item.value)
+                            ? 'remove'
+                            : 'add',
+                          value: item.value
+                        })
+                      }
+                    />
+                    <label className='text-base text-gray-700 leading-normal' htmlFor={item.value}>{item.name}</label>
+                  </div>
+                )
+              })}
+            </div>
           </fieldset>
         </form>
       </div>
