@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/clear-the-fridge-v2/static/css/main.232c872a.chunk.css",
-    "main.js": "/clear-the-fridge-v2/static/js/main.367330ef.chunk.js",
-    "main.js.map": "/clear-the-fridge-v2/static/js/main.367330ef.chunk.js.map",
+    "main.js": "/clear-the-fridge-v2/static/js/main.6b53d738.chunk.js",
+    "main.js.map": "/clear-the-fridge-v2/static/js/main.6b53d738.chunk.js.map",
     "runtime-main.js": "/clear-the-fridge-v2/static/js/runtime-main.7be2920a.js",
     "runtime-main.js.map": "/clear-the-fridge-v2/static/js/runtime-main.7be2920a.js.map",
     "static/js/2.7193d26d.chunk.js": "/clear-the-fridge-v2/static/js/2.7193d26d.chunk.js",
     "static/js/2.7193d26d.chunk.js.map": "/clear-the-fridge-v2/static/js/2.7193d26d.chunk.js.map",
     "index.html": "/clear-the-fridge-v2/index.html",
-    "precache-manifest.53cc2cf3501288db89334db51c8a69ab.js": "/clear-the-fridge-v2/precache-manifest.53cc2cf3501288db89334db51c8a69ab.js",
+    "precache-manifest.1cb65983981d803856963da0fd50d27e.js": "/clear-the-fridge-v2/precache-manifest.1cb65983981d803856963da0fd50d27e.js",
     "service-worker.js": "/clear-the-fridge-v2/service-worker.js",
     "static/css/main.232c872a.chunk.css.map": "/clear-the-fridge-v2/static/css/main.232c872a.chunk.css.map",
     "static/js/2.7193d26d.chunk.js.LICENSE.txt": "/clear-the-fridge-v2/static/js/2.7193d26d.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.7be2920a.js",
     "static/js/2.7193d26d.chunk.js",
     "static/css/main.232c872a.chunk.css",
-    "static/js/main.367330ef.chunk.js"
+    "static/js/main.6b53d738.chunk.js"
   ]
 }
