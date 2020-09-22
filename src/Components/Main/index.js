@@ -13,7 +13,6 @@ class Main extends React.Component {
   }
 
   render () {
-    console.log(this.state.searchResults)
     return (
       <div>
         <div className='max-w-lg mx-auto flex p-6 bg-gray-100 mt-10 rounded-lg shadow-md'>
