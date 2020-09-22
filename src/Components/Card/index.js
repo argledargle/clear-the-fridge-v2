@@ -36,7 +36,7 @@ function Card (props) {
         </div>
         <div className='flip-card-back absolute min-h-full min-w-full max-w-lg bg-gray-100 rounded-lg shadow-md'>
           <h1 className='text-xl text-blue-700 leading-tight'>
-            <a href={props.url}>{props.label}</a>
+            <a href={props.url} target="_blank" rel="noopener noreferrer">{props.label}</a>
           </h1>
           <h3>TODO: Map nutrition facts here</h3>
           {/* <ul className='grid grid-flow-row grid-cols-2 gap-1'>
