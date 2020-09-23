@@ -24,20 +24,14 @@ jobs:
 
     - name: Install and build
     uses: actions/setup-node@v1
-    with:
-      node-version: ${{ matrix.node-version }}
-    - run: npm ci
+    - run:  npm ci
     - run: npm run build
     - run: npm run build:tailwind
 
     - name: Test
     uses: actions/setup-node@v1
-    with:
-      node-version: ${{ matrix.node-version }}
     - run: npm test
     
     - name: Deploy
     uses: actions/setup-node@v1
-    with:
-      node-version: ${{ matrix.node-version }}
     - run: npm run deploy
