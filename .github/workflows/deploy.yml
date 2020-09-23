@@ -23,15 +23,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Install and build
-    uses: actions/setup-node@v1
     - run:  npm ci
     - run: npm run build
     - run: npm run build:tailwind
 
     - name: Test
-    uses: actions/setup-node@v1
     - run: npm test
     
     - name: Deploy
-    uses: actions/setup-node@v1
     - run: npm run deploy
