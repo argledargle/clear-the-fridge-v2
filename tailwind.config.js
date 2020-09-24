@@ -7,6 +7,9 @@ module.exports = {
       'public/**/*.html'
     ],
     theme: {
+      screens: {
+        'sm': {'max': '639px'},
+      },
       extend: {}
     },
     variants: {},

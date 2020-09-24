@@ -9,7 +9,12 @@ function Card (props) {
       return ingredientLine.concat('...')
     }
   }
-  const ingredientArray = props.ingredientLines.splice(0, 9)
+  var ingredientArrayLength = 0
+  var ingredientLinesLength = 0
+  window.screen.width < 639 ? ingredientArrayLength = 4 : ingredientArrayLength = 9
+  window.screen.width < 639 ? ingredientLinesLength = 4 : ingredientLinesLength = 5
+  const moreIngredients = props.ingredientLines.length - ingredientLinesLength
+  const ingredientArray = props.ingredientLines.splice(0, ingredientArrayLength)
   return (
     <div className='group flip h-64 min-w-full max-w-lg my-6 mx-auto'>
       <div className='flip-content min-h-full h-64 min-w-full max-w-lg relative group-hover:transformation rounded-lg shadow-md'>
@@ -19,7 +24,7 @@ function Card (props) {
             src={props.image}
             alt={props.label}
           />
-          <ul className='grid grid-cols-2 gid-row-5 gap-1 p-1 grid-flow-row max-w-md'>
+          <ul className='grid sm:grid-cols-1 grid-cols-2 grid-rows-5 gap-1 p-1 grid-flow-row max-w-md'>
             {ingredientArray.map((ingredient, i) => {
               return (
                 <li className='text-sm text-left row-span-1' key={i}>
@@ -27,9 +32,9 @@ function Card (props) {
                 </li>
               )
             })}
-            {props.ingredientLines.length >= 9 ? (
+            {props.ingredientLines.length >= ingredientArrayLength ? (
               <li className='text-sm text-left row-span-1'>
-                and {props.ingredientLines.length - 8} more ingredients...
+                and {moreIngredients} more ingredients...
               </li>
             ) : null}
           </ul>
