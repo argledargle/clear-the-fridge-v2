@@ -2,8 +2,8 @@ import React, { useState, useReducer } from 'react'
 import _pull from 'lodash/pull'
 
 const url = 'https://api.edamam.com/search?'
-const appId = 'c8b6b757'
-const appKey = '112f88722937558772de9b30b52b63ed'
+const appId = process.env.REACT_API_APPID
+const appKey = process.env.REACT_APP_API_KEY
 
 const dietArray = [
   {
