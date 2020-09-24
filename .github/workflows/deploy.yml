@@ -7,7 +7,7 @@ on:
     branches: [master]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     strategy:
@@ -32,10 +32,3 @@ jobs:
 
       - name: Test
       - run: npm test
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.6.1
-        with:
-          BRANCH: master
-          FOLDER: build
-          CLEAN: true
