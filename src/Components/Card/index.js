@@ -2,10 +2,10 @@ import React from 'react'
 
 function Card (props) {
   const truncateIngredient = ingredient => {
-    if (ingredient.length < 25) {
+    if (ingredient.length < 30) {
       return ingredient
     } else {
-      const ingredientLine = ingredient.slice(0, 25)
+      const ingredientLine = ingredient.slice(0, 30)
       return ingredientLine.concat('...')
     }
   }
