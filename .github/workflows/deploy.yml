@@ -24,3 +24,8 @@ jobs:
       - run: npm run build
       - run: npm run build:tailwind
       - run: npm test
+      - name: Publish generated content to GitHub Pages
+        uses: tsunematsu21/actions-publish-gh-pages@v1.0.1
+        with:
+          dir: build
+          branch: master
