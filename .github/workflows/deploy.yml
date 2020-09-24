@@ -34,8 +34,8 @@ jobs:
       - run: npm test
 
       - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@3.6.1
-      with: 
+        uses: JamesIves/github-pages-deploy-action@3.6.1
+        with:
         BRANCH: master
         FOLDER: build
         CLEAN: true
