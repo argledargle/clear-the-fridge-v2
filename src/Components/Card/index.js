@@ -1,6 +1,8 @@
 import React from 'react'
+import { ReactComponent as Logo } from '../../svg/external-link.svg'
 
 function Card (props) {
+  console.log(props)
   const truncateIngredient = ingredient => {
     if (ingredient.length < 25) {
       return ingredient
@@ -10,7 +12,9 @@ function Card (props) {
     }
   }
   var ingredientListLength = 0
-  window.screen.width < 639 ? ingredientListLength = 4 : ingredientListLength = 9
+  window.screen.width < 639
+    ? (ingredientListLength = 4)
+    : (ingredientListLength = 9)
   const moreIngredients = props.ingredientLines.length - ingredientListLength
   const ingredientArray = props.ingredientLines.splice(0, ingredientListLength)
   return (
@@ -39,19 +43,68 @@ function Card (props) {
         </div>
         <div className='flip-card-back absolute min-h-full min-w-full max-w-lg bg-gray-100 rounded-lg shadow-md'>
           <h1 className='text-xl text-blue-700 leading-tight'>
-            <a href={props.url} target="_blank" rel="noopener noreferrer">{props.label}</a>
+            <a href={props.url} target='_blank' rel='noopener noreferrer'>
+              {props.label} <Logo className='inline text-blue-700 mb-1' />
+            </a>
           </h1>
-          <h3>TODO: Map nutrition facts here</h3>
-          {/* <ul className='grid grid-flow-row grid-cols-2 gap-1'>
-            {ingredientArray.map((ingredient, i) => {
-              return <li key={i}>{ingredient}</li>
-            })}
-            {props.ingredientLines.length >= 6 ? (
-              <li>
-                and {props.ingredientLines.length - 5} more ingredients...
-              </li>
-            ) : null}
-          </ul> */}
+          <div className='flex flex-col flex-wrap h-56'>
+            <div class='Nutrition Facts' className='w-1/2'>
+              Nutrition Facts
+            </div>
+            <div class='servings per container' className='w-1/2'>
+              servings for container
+            </div>
+            <div class='Serving Size' className='w-1/2'>
+              Serving size
+            </div>
+            <div class='Black Bar' className='w-1/2'></div>
+            <div className='flex flex-row w-1/2'>
+              <div className='flex flex-col'>
+                <div class='Amount per Serving'>Amount Per Serving</div>
+                <div class='Calories'>Calories</div>
+              </div>
+              <div class='Number'>Num</div>
+            </div>
+            <div class='% Daily Value' className='w-1/2'>
+              % Daily Value
+            </div>
+            <div class='Saturated Fat (FATSAT)' className='w-1/2'>
+              FATSAT g
+            </div>
+            <div class='Trans Fat (FATRN)' className='w-1/2'>
+              FATRN g
+            </div>
+            <div class='Sodium (NA)' className='w-1/2'>
+              NA mg
+            </div>
+            <div class='Total Carbs (CHOCDF)' className='w-1/2'>
+              CHOCDF g
+            </div>
+            <div class='Total Sugars (SUGAR)' className='w-1/2'>
+              SUGAR g
+            </div>
+            <div class='Protein (PROCNT)' className='w-1/2'>
+              PROCNT g
+            </div>
+            <div class='Vitamin D (VITD)' className='w-1/2'>
+              VITD æg
+            </div>
+            <div class='Calcium (CA)' className='w-1/2'>
+              CA mg
+            </div>
+            <div class='Iron (FE)' className='w-1/2'>
+              FE mg
+            </div>
+            <div class='Potassium (K)' className='w-1/2'>
+              K mg
+            </div>
+            <div class='Vitamin B12 (VITB12)' className='w-1/2'>
+              VITB12 æg
+            </div>
+            <div class='Fiber (FIBTG)' className='w-1/2'>
+              FIBTG g
+            </div>
+          </div>
         </div>
       </div>
     </div>
