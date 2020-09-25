@@ -2,19 +2,19 @@ import React from 'react'
 
 function Card (props) {
   const truncateIngredient = ingredient => {
-    if (ingredient.length < 30) {
+    if (ingredient.length < 25) {
       return ingredient
     } else {
-      const ingredientLine = ingredient.slice(0, 30)
+      const ingredientLine = ingredient.slice(0, 25)
       return ingredientLine.concat('...')
     }
   }
-  var ingredientArrayLength = 0
+  var ingredientListLength = 0
   var ingredientLinesLength = 0
-  window.screen.width < 639 ? ingredientArrayLength = 4 : ingredientArrayLength = 9
+  window.screen.width < 639 ? ingredientListLength = 4 : ingredientListLength = 9
   window.screen.width < 639 ? ingredientLinesLength = 4 : ingredientLinesLength = 5
-  const moreIngredients = props.ingredientLines.length - ingredientLinesLength
-  const ingredientArray = props.ingredientLines.splice(0, ingredientArrayLength)
+  const moreIngredients = props.ingredientLines.length - ingredientListLength
+  const ingredientArray = props.ingredientLines.splice(0, ingredientListLength)
   return (
     <div className='group flip h-64 min-w-full max-w-lg my-6 mx-auto'>
       <div className='flip-content min-h-full h-64 min-w-full max-w-lg relative group-hover:transformation rounded-lg shadow-md'>
@@ -32,7 +32,7 @@ function Card (props) {
                 </li>
               )
             })}
-            {props.ingredientLines.length >= ingredientArrayLength ? (
+            {moreIngredients > 0 ? (
               <li className='text-sm text-left row-span-1'>
                 and {moreIngredients} more ingredients...
               </li>
