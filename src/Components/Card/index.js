@@ -10,9 +10,7 @@ function Card (props) {
     }
   }
   var ingredientListLength = 0
-  var ingredientLinesLength = 0
   window.screen.width < 639 ? ingredientListLength = 4 : ingredientListLength = 9
-  window.screen.width < 639 ? ingredientLinesLength = 4 : ingredientLinesLength = 5
   const moreIngredients = props.ingredientLines.length - ingredientListLength
   const ingredientArray = props.ingredientLines.splice(0, ingredientListLength)
   return (
