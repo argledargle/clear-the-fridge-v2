@@ -2,7 +2,6 @@ import React from 'react'
 import { ReactComponent as Logo } from '../../svg/external-link.svg'
 
 function Card (props) {
-  console.log(props)
   const truncateText = (ingredient, length) => {
     if (ingredient.length < length) {
       return ingredient
