@@ -31,8 +31,8 @@ jobs:
         run: npm run build
       - name: Run tests
         run: npm test
-      - name: Deploys
-        run: |
-          echo " ${{ secrets.USERNAME}} "
-          git config user.name ${{ secrets.USERNAME }} && git config user.email ${{ secrets.USEREMAIL }}
-          npm run deploy
+      - name: Deploy
+        env:
+          USERNAME:  ${{ secrets.USERNAME }}
+          USEREMAIL: ${{ secrets.USEREMAIL }}
+        run: npm run deploy
