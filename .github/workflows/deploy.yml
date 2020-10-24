@@ -33,6 +33,6 @@ jobs:
         run: npm test
       - name: Deploys
         run: |
-          echo ${{ secrets.USERNAME}}
+          echo " ${{ secrets.USERNAME}} "
           git config user.name ${{ secrets.USERNAME }} && git config user.email ${{ secrets.USEREMAIL }}
           npm run deploy
