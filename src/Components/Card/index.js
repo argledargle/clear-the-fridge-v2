@@ -1,7 +1,7 @@
 import React from 'react'
 import { ReactComponent as Logo } from '../../svg/external-link.svg'
 
-function Card (props) {
+const Card = props => {
   const truncateText = (ingredient, length) => {
     if (ingredient.length < length) {
       return ingredient
@@ -11,12 +11,10 @@ function Card (props) {
     }
   }
   const caloriesPerServing = props.calories / props.yield
-  var ingredientListLength = 0
-  window.screen.width < 639
-    ? (ingredientListLength = 4)
-    : (ingredientListLength = 9)
+  const ingredientListLength = window.screen.width < 639 ? 4 : 9
   const moreIngredients = props.ingredientLines.length - ingredientListLength
-  const ingredientArray = props.ingredientLines.splice(0, ingredientListLength)
+  const ingredientArray = props.ingredientLines.slice(0, ingredientListLength)
+
   return (
     <div className='group flip h-64 min-w-full max-w-lg my-6 mx-auto'>
       <div className='flip-content min-h-full h-64 min-w-full max-w-lg relative group-hover:transformation rounded-lg shadow-md'>
@@ -44,7 +42,8 @@ function Card (props) {
         <div className='flip-card-back absolute min-h-full min-w-full max-w-lg bg-gray-100 rounded-lg shadow-md'>
           <h1 className='text-xl text-blue-700 leading-tight'>
             <a href={props.url} target='_blank' rel='noopener noreferrer'>
-              {truncateText(props.label, 35)} <Logo className='inline text-blue-700 mb-1' />
+              {truncateText(props.label, 35)}
+              <Logo className='inline text-blue-700 mb-1' />
             </a>
           </h1>
           <div className='flex flex-col flex-wrap h-56 pt-1 text-left pl-8 sm:pl-.8'>
@@ -56,7 +55,6 @@ function Card (props) {
             <div className='text-xs border-b-8 border-black w-5/12 sm:w-45'>
               Serves about {props.yield}
             </div>
-            <div className='w-5/12 sm:w-45'></div>
             <div className='flex flex-row w-5/12 sm:w-45 justify-between border-b border-black'>
               <div className='flex flex-col'>
                 <p className='text-xs font-extrabold'>Amount Per Serving</p>
@@ -72,121 +70,125 @@ function Card (props) {
             <p className='w-5/12 sm:w-45 flex flex-row justify-between border-b border-black text-xs'>
               <span>
                 <span className='font-extrabold'>Total Fat</span>{' '}
-                {Math.round(props.totalNutrients.FAT.quantity / props.yield)}
-                {props.totalNutrients.FAT.unit}
+                {Math.round(props.totalNutrients.FAT?.quantity / props.yield)}
+                {props.totalNutrients.FAT?.unit}
               </span>
               <span>
-                {Math.round(props.totalDaily.FAT.quantity / props.yield)}
-                {props.totalDaily.FAT.unit}
+                {Math.round(props.totalDaily.FAT?.quantity / props.yield)}
+                {props.totalDaily.FAT?.unit}
               </span>
             </p>
             <p className='w-5/12 sm:w-45 flex flex-row justify-between border-b border-black text-xs pl-2'>
               <span>
                 <span className='italic'>Saturated fat</span>{' '}
-                {Math.round(props.totalNutrients.FASAT.quantity / props.yield)}
-                {props.totalNutrients.FASAT.unit}
+                {Math.round(props.totalNutrients.FASAT?.quantity / props.yield)}
+                {props.totalNutrients.FASAT?.unit}
               </span>
               <span>
-                {Math.round(props.totalDaily.FASAT.quantity / props.yield)}
-                {props.totalDaily.FASAT.unit}
+                {Math.round(props.totalDaily.FASAT?.quantity / props.yield)}
+                {props.totalDaily.FASAT?.unit}
               </span>
             </p>
             <p className='w-5/12 sm:w-45 flex flex-row justify-between border-b border-black text-xs pl-2'>
               <span>
                 <span className='italic'>Trans fat</span>{' '}
-                {Math.round(props.totalNutrients.FATRN.quantity / props.yield)}
-                {props.totalNutrients.FATRN.unit}
+                {Math.round(props.totalNutrients.FATRN?.quantity / props.yield)}
+                {props.totalNutrients.FATRN?.unit}
               </span>
             </p>
             <p className='w-5/12 sm:w-45 flex flex-row justify-between border-b border-black text-xs'>
               <span>
                 <span className='font-extrabold'>Sodium</span>{' '}
-                {Math.round(props.totalNutrients.NA.quantity / props.yield)}
-                {props.totalNutrients.NA.unit}
+                {Math.round(props.totalNutrients.NA?.quantity / props.yield)}
+                {props.totalNutrients.NA?.unit}
               </span>
               <span>
-                {Math.round(props.totalDaily.NA.quantity / props.yield)}
-                {props.totalDaily.NA.unit}
+                {Math.round(props.totalDaily.NA?.quantity / props.yield)}
+                {props.totalDaily.NA?.unit}
               </span>
             </p>
             <p className='w-5/12 sm:w-45 flex flex-row justify-between border-b border-black text-xs'>
               <span>
                 <span className='font-extrabold'>Total Carbohydrate</span>{' '}
-                {Math.round(props.totalNutrients.CHOCDF.quantity / props.yield)}
-                {props.totalNutrients.CHOCDF.unit}
+                {Math.round(
+                  props.totalNutrients.CHOCDF?.quantity / props.yield
+                )}
+                {props.totalNutrients.CHOCDF?.unit}
               </span>
               <span>
-                {Math.round(props.totalDaily.CHOCDF.quantity / props.yield)}
-                {props.totalDaily.CHOCDF.unit}
+                {Math.round(props.totalDaily.CHOCDF?.quantity / props.yield)}
+                {props.totalDaily.CHOCDF?.unit}
               </span>
             </p>
             <p className='w-5/12 sm:w-45 flex flex-row justify-between border-b border-black text-xs pl-2'>
               <span>
                 <span className='italic'>Total Fiber</span>{' '}
-                {Math.round(props.totalNutrients.FIBTG.quantity / props.yield)}
-                {props.totalNutrients.FIBTG.unit}
+                {Math.round(props.totalNutrients.FIBTG?.quantity / props.yield)}
+                {props.totalNutrients.FIBTG?.unit}
               </span>
               <span>
-                {Math.round(props.totalDaily.FIBTG.quantity / props.yield)}
-                {props.totalDaily.FIBTG.unit}
+                {Math.round(props.totalDaily.FIBTG?.quantity / props.yield)}
+                {props.totalDaily.FIBTG?.unit}
               </span>
             </p>
             <p className='w-5/12 sm:w-45 flex flex-row justify-between border-b border-black text-xs pl-2 leading-5'>
               <span>
                 <span className='italic'>Total Sugars</span>{' '}
-                {Math.round(props.totalNutrients.SUGAR.quantity / props.yield)}
-                {props.totalNutrients.SUGAR.unit}
+                {Math.round(props.totalNutrients.SUGAR?.quantity / props.yield)}
+                {props.totalNutrients.SUGAR?.unit}
               </span>
             </p>
             <p className='w-5/12 sm:w-45 flex flex-row justify-between border-b-8 border-black text-xs'>
               <span>
                 <span className='font-extrabold'>Protein</span>{' '}
-                {Math.round(props.totalNutrients.PROCNT.quantity / props.yield)}
-                {props.totalNutrients.PROCNT.unit}
+                {Math.round(
+                  props.totalNutrients.PROCNT?.quantity / props.yield
+                )}
+                {props.totalNutrients.PROCNT?.unit}
               </span>
             </p>
             <p className='w-5/12 sm:w-45 flex flex-row justify-between border-b border-black text-xs'>
               <span>
                 <span>Vitamin D</span>{' '}
-                {Math.round(props.totalNutrients.VITD.quantity / props.yield)}
-                {props.totalNutrients.VITD.unit}
+                {Math.round(props.totalNutrients.VITD?.quantity / props.yield)}
+                {props.totalNutrients.VITD?.unit}
               </span>
               <span>
-                {Math.round(props.totalDaily.VITD.quantity / props.yield)}
-                {props.totalDaily.VITD.unit}
+                {Math.round(props.totalDaily.VITD?.quantity / props.yield)}
+                {props.totalDaily.VITD?.unit}
               </span>
             </p>
             <p className='w-5/12 sm:w-45 flex flex-row justify-between border-b border-black text-xs'>
               <span>
                 <span>Calcium</span>{' '}
-                {Math.round(props.totalNutrients.CA.quantity / props.yield)}
-                {props.totalNutrients.CA.unit}
+                {Math.round(props.totalNutrients.CA?.quantity / props.yield)}
+                {props.totalNutrients.CA?.unit}
               </span>
               <span>
-                {Math.round(props.totalDaily.CA.quantity / props.yield)}
-                {props.totalDaily.CA.unit}
+                {Math.round(props.totalDaily.CA?.quantity / props.yield)}
+                {props.totalDaily.CA?.unit}
               </span>
             </p>
             <p className='w-5/12 sm:w-45 flex flex-row justify-between border-b border-black text-xs'>
               <span>
                 <span>Iron</span>{' '}
-                {Math.round(props.totalNutrients.FE.quantity / props.yield)}
-                {props.totalNutrients.FE.unit}
+                {Math.round(props.totalNutrients.FE?.quantity / props.yield)}
+                {props.totalNutrients.FE?.unit}
               </span>
               <span>
-                {Math.round(props.totalDaily.FE.quantity / props.yield)}
-                {props.totalDaily.FE.unit}
+                {Math.round(props.totalDaily.FE?.quantity / props.yield)}
+                {props.totalDaily.FE?.unit}
               </span>
             </p>
             <p className='w-5/12 sm:w-45 flex flex-row justify-between border-b border-black text-xs'>
               <span>
                 <span>Potassium</span>{' '}
-                {Math.round(props.totalNutrients.K.quantity / props.yield)}
-                {props.totalNutrients.K.unit}
+                {Math.round(props.totalNutrients.K?.quantity / props.yield)}
+                {props.totalNutrients.K?.unit}
               </span>
               <span>
-                {Math.round(props.totalDaily.K.quantity / props.yield)}
-                {props.totalDaily.K.unit}
+                {Math.round(props.totalDaily.K?.quantity / props.yield)}
+                {props.totalDaily.K?.unit}
               </span>
             </p>
             <p className='text-xxs w-5/12 sm:w-45'>
