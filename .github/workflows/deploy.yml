@@ -2,17 +2,21 @@ name: Build + Deploy
 
 on:
   push:
-    branches: [master]
+    branches: 
+    - master
   pull_request:
-    branches: [master]
+    branches: 
+    - master
 
 jobs:
-  build-and-deploy:
+  build:
+    name: Build
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: 
+        - 14.x
 
     steps:
       - uses: actions/checkout@v2
@@ -22,5 +26,29 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm i
       - run: npm run build
-      - run: npm test
-      - run: npm run deploy
+
+  test:
+    name: Test
+    needs: build
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version:
+        - 14.x
+
+    steps:
+     - run: npm test
+
+  deploy:
+    name: Deploy
+    needs: [build, test]
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version:
+        - 14.x
+
+    steps:
+     - run: npm run deploy
