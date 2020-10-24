@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/clear-the-fridge-v2/precache-manifest.da7022e172fbbcad52dee5c02b02c69a.js"
+  "/clear-the-fridge-v2/precache-manifest.f1dccccdcffa38b73ccbff484f32c224.js"
 );
 
 self.addEventListener('message', (event) => {
