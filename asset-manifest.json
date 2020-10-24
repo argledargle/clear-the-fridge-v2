@@ -1,23 +1,21 @@
 {
   "files": {
-    "main.css": "/clear-the-fridge-v2/static/css/main.0bc4195e.chunk.css",
-    "main.js": "/clear-the-fridge-v2/static/js/main.17529c45.chunk.js",
-    "main.js.map": "/clear-the-fridge-v2/static/js/main.17529c45.chunk.js.map",
-    "runtime-main.js": "/clear-the-fridge-v2/static/js/runtime-main.7be2920a.js",
-    "runtime-main.js.map": "/clear-the-fridge-v2/static/js/runtime-main.7be2920a.js.map",
-    "static/js/2.a04a3fbd.chunk.js": "/clear-the-fridge-v2/static/js/2.a04a3fbd.chunk.js",
-    "static/js/2.a04a3fbd.chunk.js.map": "/clear-the-fridge-v2/static/js/2.a04a3fbd.chunk.js.map",
+    "main.css": "/clear-the-fridge-v2/static/css/main.bdbd607c.chunk.css",
+    "main.js": "/clear-the-fridge-v2/static/js/main.22b53066.chunk.js",
+    "main.js.map": "/clear-the-fridge-v2/static/js/main.22b53066.chunk.js.map",
+    "runtime-main.js": "/clear-the-fridge-v2/static/js/runtime-main.ff6cc6f8.js",
+    "runtime-main.js.map": "/clear-the-fridge-v2/static/js/runtime-main.ff6cc6f8.js.map",
+    "static/js/2.00b56108.chunk.js": "/clear-the-fridge-v2/static/js/2.00b56108.chunk.js",
+    "static/js/2.00b56108.chunk.js.map": "/clear-the-fridge-v2/static/js/2.00b56108.chunk.js.map",
     "index.html": "/clear-the-fridge-v2/index.html",
-    "precache-manifest.c25c3351e6b0448b07b1e6f3ceac7164.js": "/clear-the-fridge-v2/precache-manifest.c25c3351e6b0448b07b1e6f3ceac7164.js",
-    "service-worker.js": "/clear-the-fridge-v2/service-worker.js",
-    "static/css/main.0bc4195e.chunk.css.map": "/clear-the-fridge-v2/static/css/main.0bc4195e.chunk.css.map",
-    "static/js/2.a04a3fbd.chunk.js.LICENSE.txt": "/clear-the-fridge-v2/static/js/2.a04a3fbd.chunk.js.LICENSE.txt",
-    "static/media/external-link.a2251bf9.svg": "/clear-the-fridge-v2/static/media/external-link.a2251bf9.svg"
+    "static/css/main.bdbd607c.chunk.css.map": "/clear-the-fridge-v2/static/css/main.bdbd607c.chunk.css.map",
+    "static/js/2.00b56108.chunk.js.LICENSE.txt": "/clear-the-fridge-v2/static/js/2.00b56108.chunk.js.LICENSE.txt",
+    "static/media/external-link.c4aa1899.svg": "/clear-the-fridge-v2/static/media/external-link.c4aa1899.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.7be2920a.js",
-    "static/js/2.a04a3fbd.chunk.js",
-    "static/css/main.0bc4195e.chunk.css",
-    "static/js/main.17529c45.chunk.js"
+    "static/js/runtime-main.ff6cc6f8.js",
+    "static/js/2.00b56108.chunk.js",
+    "static/css/main.bdbd607c.chunk.css",
+    "static/js/main.22b53066.chunk.js"
   ]
 }
