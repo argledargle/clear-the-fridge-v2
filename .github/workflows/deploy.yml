@@ -35,5 +35,5 @@ jobs:
           USEREMAIL: ${{ secrets.USEREMAIL }}
         run: |
           git config --global user.email $USEREMAIL
-          git config --global user.name $USEREMAIL
+          git config --global user.name $USERNAME
           npm run deploy
