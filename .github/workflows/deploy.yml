@@ -27,12 +27,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Clean install
         run: npm ci
-      - name: Build Project
-        run: npm run build
       - name: Run tests
         run: npm test
       - name: Deploy
         env:
-          user.name: ${{ secrets.USERNAME }}
-          user.email: ${{ secrets.USEREMAIL }}
-        run: npm run deploy
+          USERNAME: ${{ secrets.USERNAME }}
+          USEREMAIL: ${{ secrets.USEREMAIL }}
+        run: |
+          git config --global user.email $USEREMAIL
+          git config --global user.name $USEREMAIL
+          npm run deploy
