@@ -34,4 +34,4 @@ jobs:
       - name: Deploys
         run: |
           git config user.name ${{ secrets.USERNAME }} && git config user.email ${{ secrets.USEREMAIL }}
-          npm run gh-pages-deploy
+          npm run deploy
