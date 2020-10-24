@@ -1,15 +1,9 @@
 name: Build + Deploy
 
-on:
-  push:
-    branches: 
-    - master
-  pull_request:
-    branches: 
-    - master
+on: [push, pull_request]
 
 jobs:
-  deploy:
+  build:
     name: Build, test, deploy
     runs-on: ubuntu-latest
 
@@ -28,4 +22,3 @@ jobs:
       - run: npm i
       - run: npm run build
       - run: npm test
-      - run: npm run deploy
