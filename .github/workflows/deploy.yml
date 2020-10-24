@@ -33,6 +33,6 @@ jobs:
         run: npm test
       - name: Deploy
         env:
-          USERNAME:  ${{ secrets.USERNAME }}
-          USEREMAIL: ${{ secrets.USEREMAIL }}
+          user.name: ${{ secrets.USERNAME }}
+          user.email: ${{ secrets.USEREMAIL }}
         run: npm run deploy
