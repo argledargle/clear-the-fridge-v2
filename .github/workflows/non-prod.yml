@@ -2,11 +2,11 @@ name: Build
 
 on:
   push:
-    branches-ignore: 
-    - master
+    branches-ignore:
+      - master
   pull_request:
-    branches-ignore: 
-    - master
+    branches-ignore:
+      - master
 
 jobs:
   build:
@@ -15,8 +15,8 @@ jobs:
 
     strategy:
       matrix:
-        node-version: 
-        - 14.x
+        node-version:
+          - 14.x
 
     steps:
       - name: Setup repo
@@ -25,6 +25,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm i
-      - run: npm run build
-      - run: npm test
+      - name: Clean install
+        run: npm ci
+      - name: Build Project
+        run: npm run build
+      - name: Run tests
+        run: npm test
