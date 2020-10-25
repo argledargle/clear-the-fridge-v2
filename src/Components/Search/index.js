@@ -62,6 +62,7 @@ const Search = ({ callback }) => {
       input.textInput === undefined ||
       input.textInput === ''
     ) {
+      // eslint-disable-next-line no-undef
       alert('You need to enter something into the text field.')
       return null
     }
@@ -72,6 +73,7 @@ const Search = ({ callback }) => {
   }
 
   function getResults (url) {
+    // eslint-disable-next-line no-undef
     fetch(url)
       .then(response => response.json())
       .then(data => callback(data))
@@ -162,10 +164,14 @@ const Search = ({ callback }) => {
                             ? 'remove'
                             : 'add',
                           value: item.value
-                        })
-                      }
+                        })}
                     />
-                    <label className='text-base text-gray-700 leading-normal' htmlFor={item.value}>{item.name}</label>
+                    <label
+                      className='text-base text-gray-700 leading-normal'
+                      htmlFor={item.value}
+                    >
+                      {item.name}
+                    </label>
                   </div>
                 )
               })}
