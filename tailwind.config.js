@@ -25,7 +25,7 @@ module.exports = {
     },
     extend: {
       width: {
-        '45': '45%'
+        45: '45%'
       },
       padding: {
         '.8': '.8rem'
