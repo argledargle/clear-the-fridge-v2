@@ -17,6 +17,7 @@
     "react-scripts": "4.0.0",
     "tailwindcss": "1.9.6"
   },
+  "devDependencies": {},
   "scripts": {
     "build:tailwind": "tailwind build src/tailwind.css -o src/tailwind.output.css",
     "watch:tailwind": "chokidar 'src/**/*.css' 'src/**/*.scss' --ignore src/tailwind.output.css - 'npm run build:tailwind' ",
@@ -32,7 +33,8 @@
   "eslintConfig": {
     "extends": "react-app",
     "env": {
-      "browser": true
+      "browser": true,
+      "jest": true
     }
   },
   "browserslist": {
