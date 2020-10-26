@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { render } from '@testing-library/react'
-import App from '../src/Components/App'
+import App from '../Components/App'
 
 test('renders the app', () => {
   const { getByText } = render(<App />)
