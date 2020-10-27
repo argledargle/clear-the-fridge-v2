@@ -1,11 +1,11 @@
 import React from 'react'
 import Card from '../Card'
 
-function Main (props) {
+function Cards (props) {
   const recipeArray = props.recipes
-  if (props.recipes.length === 0) {
+  if (recipeArray.length === 0) {
     return (
-      <div className='max-w-lg mx-auto flex flex-col p-6 bg-gray-100 mt-10 rounded-lg shadow-md'>
+      <div data-testid='errorMessage' className='max-w-lg mx-auto flex flex-col p-6 bg-gray-100 mt-10 rounded-lg shadow-md'>
         <h1 className='text-2xl text-blue-700 leading-tight'>
           Sorry. No results were found. :(
         </h1>
@@ -24,4 +24,4 @@ function Main (props) {
     </div>
   )
 }
-export default Main
+export default Cards

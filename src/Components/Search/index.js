@@ -62,7 +62,6 @@ const Search = ({ callback }) => {
       input.textInput === undefined ||
       input.textInput === ''
     ) {
-      // eslint-disable-next-line no-undef
       alert('You need to enter something into the text field.')
       return null
     }
@@ -73,7 +72,7 @@ const Search = ({ callback }) => {
   }
 
   function getResults (url) {
-    // eslint-disable-next-line no-undef
+    console.log(url)
     fetch(url)
       .then(response => response.json())
       .then(data => callback(data))
@@ -127,6 +126,7 @@ const Search = ({ callback }) => {
               onChange={handleInputChange}
             />
             <select
+              data-testid='dietSelect'
               className='rounded-sm border-gray-600 border'
               name='dietInput'
               onChange={handleInputChange}
@@ -135,11 +135,12 @@ const Search = ({ callback }) => {
                 Diet
               </option>
               <option value='balanced'>Balanced</option>
-              <option value='high-protein'>High-Protein</option>
-              <option value='low-carb'>Low-Carb</option>
+              <option data-testid='highProtein' value='high-protein'>High-Protein</option>
+              <option data-testid='lowCarb' value='low-carb'>Low-Carb</option>
               <option value='low-fat'>Low-Fat</option>
             </select>
             <input
+              data-testid='submit'
               type='submit'
               value='Search'
               className='rounded-sm border-gray-600 border'
@@ -158,13 +159,15 @@ const Search = ({ callback }) => {
                       name={item.value}
                       value={item.value}
                       id={item.value}
+                      data-testid={item.value}
                       onChange={() =>
                         dispatch({
                           type: checkedDietArray.includes(item.value)
                             ? 'remove'
                             : 'add',
                           value: item.value
-                        })}
+                        })
+                      }
                     />
                     <label
                       className='text-base text-gray-700 leading-normal'

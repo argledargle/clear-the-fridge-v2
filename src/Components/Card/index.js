@@ -16,7 +16,7 @@ const Card = props => {
   const ingredientArray = props.ingredientLines.slice(0, ingredientListLength)
 
   return (
-    <div className='group flip h-64 min-w-full max-w-lg my-6 mx-auto'>
+    <div data-testid='cardComponent' className='group flip h-64 min-w-full max-w-lg my-6 mx-auto'>
       <div className='flip-content min-h-full h-64 min-w-full max-w-lg relative group-hover:transformation rounded-lg shadow-md'>
         <div className='flip-card-front absolute min-h-full h-64 min-w-full max-w-lg bg-gray-100 rounded-lg shadow-md flex flex-row'>
           <img
@@ -33,19 +33,19 @@ const Card = props => {
               )
             })}
             {moreIngredients > 0 ? (
-              <li className='text-sm text-left row-span-1'>
+              <li data-testid='extraIngredients' className='text-sm text-left row-span-1'>
                 and {moreIngredients} more ingredients...
               </li>
             ) : null}
           </ul>
         </div>
         <div className='flip-card-back absolute min-h-full min-w-full max-w-lg bg-gray-100 rounded-lg shadow-md'>
-          <h1 className='text-xl text-blue-700 leading-tight'>
+          <label className='text-xl text-blue-700 leading-tight'>
             <a href={props.url} target='_blank' rel='noopener noreferrer'>
               {truncateText(props.label, 35)}
               <Logo className='inline text-blue-700 mb-1' />
             </a>
-          </h1>
+          </label>
           <div className='flex flex-col flex-wrap h-56 pt-1 text-left pl-8 sm:pl-.8'>
             <div className='w-5/12 sm:w-45'>
               <h1 className='text-xl font-extrabold border-b border-black leading-none'>
